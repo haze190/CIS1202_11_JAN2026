@@ -1,0 +1,1579 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MY PORTFOLIO - Cleford Balili</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+        integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f5f5;
+        }
+
+        .section-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header & Navigation */
+        header {
+            background: #2c3e50;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo-text {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-link:hover {
+            color: #3498db;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            padding: 120px 0 60px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .hero-section .section-content {
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+        }
+
+        .hero-details {
+            flex: 1;
+        }
+
+        .title {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .subtitle {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: #ecf0f1;
+        }
+
+        .description {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .button {
+            padding: 12px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .order-now {
+            background: #3498db;
+            color: white;
+        }
+
+        .contact-us {
+            background: transparent;
+            border: 2px solid white;
+            color: white;
+        }
+
+        .button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .hero-image-wrapper {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+
+        .profile-image {
+            width: 300px;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 5px solid white;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        /* About Section */
+        .about-section {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .about-image-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+        }
+
+        .user-placeholder {
+            width: 200px;
+            height: 200px;
+            background: #ecf0f1;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: #2c3e50;
+        }
+
+        .about-detail {
+            flex: 1;
+        }
+
+        .section-title-about {
+            font-size: 2.5rem;
+            color: #2c3e50;
+            margin-bottom: 1.5rem;
+        }
+
+        .social-link-list {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #3498db;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .social-link:hover {
+            background: #2c3e50;
+            transform: translateY(-3px);
+        }
+
+        /* Guide Questions */
+        .guide-questions {
+            background: #2c3e50;
+            padding: 60px 0;
+            color: white;
+        }
+
+        .guide-questions h3 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: #3498db;
+        }
+
+        .guide-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .guide-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1.5rem;
+            border-radius: 10px;
+            border-left: 4px solid #3498db;
+            transition: transform 0.3s;
+        }
+
+        .guide-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .guide-item h4 {
+            color: #3498db;
+            margin-bottom: 0.8rem;
+            font-size: 1.2rem;
+        }
+
+        /* Portfolio Section */
+        .portfolio-section {
+            padding: 80px 0;
+            background: #ecf0f1;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #2c3e50;
+            margin-bottom: 3rem;
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .portfolio-item {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .portfolio-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+
+        .portfolio-item h3 {
+            color: #2c3e50;
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+        }
+
+        /* Specific Portfolio Item Styles */
+        .infographic-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+        }
+
+        .info-step {
+            text-align: center;
+            flex: 1;
+        }
+
+        .info-step i {
+            font-size: 2rem;
+            color: #3498db;
+            margin-bottom: 1rem;
+        }
+
+        .mindmap-container {
+            position: relative;
+            padding: 2rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 10px;
+            color: white;
+        }
+
+        .mindmap-center {
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 1.5rem;
+        }
+
+        .mindmap-branch {
+            background: rgba(255,255,255,0.1);
+            padding: 1rem;
+            border-radius: 5px;
+            margin: 1rem 0;
+        }
+
+        .storyboard-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .story-panel {
+            background: #f8f9fa;
+            padding: 1rem;
+            border-radius: 8px;
+            border-left: 4px solid #3498db;
+        }
+
+        .flowchart-container {
+            background: #2c3e50;
+            color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .flow-step {
+            background: #3498db;
+            padding: 1rem;
+            border-radius: 5px;
+            margin: 0.5rem 0;
+            font-weight: bold;
+        }
+
+        .poster-container {
+            background: white;
+            border: 2px solid #3498db;
+            padding: 1.5rem;
+            border-radius: 10px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 0.8rem;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background: #ecf0f1;
+            color: #2c3e50;
+        }
+
+        .brochure-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .model-3d-view {
+            position: relative;
+            height: 200px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .cube {
+            width: 100px;
+            height: 100px;
+            background: #3498db;
+            transform: rotate(45deg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .guide-booklet {
+            background: white;
+            border: 2px dashed #3498db;
+            padding: 1.5rem;
+            border-radius: 10px;
+        }
+
+        .db-schema {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+        }
+
+        .db-table {
+            background: white;
+            border: 2px solid #3498db;
+            border-radius: 5px;
+            overflow: hidden;
+            min-width: 150px;
+        }
+
+        .db-header {
+            background: #3498db;
+            color: white;
+            padding: 0.8rem;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .db-row {
+            padding: 0.5rem;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .network-diagram {
+            position: relative;
+            height: 200px;
+            background: #2c3e50;
+            border-radius: 10px;
+        }
+
+        .net-node {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            background: #3498db;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        .center-node {
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .node-1 { top: 20%; left: 20%; }
+        .node-2 { top: 20%; right: 20%; }
+        .node-3 { bottom: 20%; left: 20%; }
+
+        .comic-strip {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .comic-panel {
+            background: white;
+            border: 2px solid #333;
+            padding: 1rem;
+            border-radius: 5px;
+        }
+
+        /* Tutorial Styles - Keeping Original Colors */
+        .tutorial-container {
+            background: #222;
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 2rem 0;
+            color: white;
+        }
+
+        .tutorial-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid #3498db;
+        }
+
+        .difficulty {
+            background: #e74c3c;
+            color: white;
+            padding: 0.3rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+
+        .code-tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .code-tab {
+            background: #333;
+            padding: 10px 20px;
+            border-radius: 5px 5px 0 0;
+            cursor: pointer;
+            border: none;
+            color: white;
+            transition: all 0.3s;
+            font-family: inherit;
+        }
+
+        .code-tab:hover {
+            background: #444;
+        }
+
+        .code-tab.active {
+            background: #3498db;
+        }
+
+        .code-panel {
+            display: none;
+            background: #222;
+            padding: 1.5rem;
+            border-radius: 0 10px 10px 10px;
+            margin-bottom: 1rem;
+            animation: fadeIn 0.5s;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .code-panel.active {
+            display: block;
+        }
+
+        .code-example {
+            background: #111;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+        }
+
+        .code-comment {
+            color: #888;
+        }
+
+        .code-tag {
+            color: #f92672;
+        }
+
+        .code-attr {
+            color: #a6e22e;
+        }
+
+        .code-value {
+            color: #e6db74;
+        }
+
+        .tutorial-step {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+        }
+
+        .tutorial-step h4 {
+            color: #3498db;
+            margin-bottom: 1rem;
+        }
+
+        .live-preview {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            color: #333;
+            margin: 1rem 0;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-top: 2rem;
+        }
+
+        .contact-info h3,
+        .contact-form h3 {
+            color: #2c3e50;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .contact-item i {
+            width: 40px;
+            height: 40px;
+            background: #3498db;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            font-family: inherit;
+            font-size: 1rem;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #3498db;
+        }
+
+        /* Footer */
+        footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero-section .section-content,
+            .about-image-wrapper,
+            .contact-container {
+                flex-direction: column;
+            }
+
+            .nav-menu {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .title {
+                font-size: 2.2rem;
+            }
+
+            .subtitle {
+                font-size: 1.5rem;
+            }
+
+            .profile-image {
+                width: 250px;
+                height: 250px;
+            }
+
+            .guide-grid,
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .brochure-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .db-schema {
+                flex-direction: column;
+            }
+
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-section {
+                padding-top: 150px;
+            }
+        }
+
+        /* Additional Styles for Existing Items */
+        .mini-website-frame {
+            background: white;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .style-guide-container {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            border: 2px solid #3498db;
+        }
+
+        .color-swatch {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border-radius: 3px;
+            margin: 0 5px;
+            vertical-align: middle;
+        }
+
+        .story-container {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 10px;
+            border-left: 5px solid #3498db;
+        }
+
+        /* Arrow for infographic */
+        .arrow {
+            color: #3498db;
+            font-size: 1.5rem;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar section-content">
+            <a href="#" class="nav-logo">
+                <h2 class="logo-text">MY PORTFOLIO</h2>
+            </a>
+            <ul class="nav-menu">
+                <li class="nav-link"><a href="#" class="nav-link">Home</a></li>
+                <li class="nav-link"><a href="#about" class="nav-link">About</a></li>
+                <li class="nav-link"><a href="#portfolio" class="nav-link">Portfolio</a></li>
+                <li class="nav-link"><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero-section">
+            <div class="section-content">
+                <div class="hero-details">
+                    <h2 class="title">BSIS-1</h2>
+                    <h3 class="subtitle">HI, I'm Cleford Cajilo, Balili from Philippines</h3>
+                    <p class="description">Welcome to my Portfolio, where you can learn the basic of Introduction to
+                        Computer. <br><br><i>"Work hard in silence, let your success make the noise"</i></p>
+                    <div class="buttons">
+                        <a href="#portfolio" class="button order-now">Learn Now</a>
+                        <a href="#contact" class="button contact-us">Contact Us</a>
+                    </div>
+                </div>
+                <div class="hero-image-wrapper">
+                    <img src="https://i.ibb.co/27v1fQYd/balili.webp" alt="Cleford Balili" class="profile-image">
+                </div>
+            </div>
+        </section>
+
+        <section class="about-section" id="about">
+            <div class="section-content">
+                <div class="about-image-wrapper">
+                    <div class="placeholder-image user-placeholder"><i class="fa-solid fa-user"></i></div>
+                    <div class="about-detail">
+                        <h2 class="section-title-about">About Me</h2>
+                        <p class="text">Hello Everyone! I am Cleford Cajilo, Balili of BSIS-1 from University of San
+                            Carlos Cebu. My coding skills are still at the beginning and need improvement but I
+                            could say that I have gotten good at coding. I love playing Soccer and cute things. My hobbies are
+                            Biking, Soccer, watching TV shows and Action Movies. I like listening to soft music, because it helps me calm down and relax my stress. 
+                            And That's all I could say about myself, I hope you all
+                            like My Portfolio.</p>
+                        <div class="social-link-list">
+                            <a href="https://www.facebook.com/hansoe.binny" class="social-link" target="_blank">
+                                <i class="fa-brands fa-facebook"></i>
+                            </a>
+                            <a href="https://www.instagram.com/clefordbalili" class="social-link" target="_blank">
+                                <i class="fa-brands fa-instagram"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Guide Questions Section -->
+        <section class="guide-questions">
+            <div class="section-content">
+                <h3>Creative Output Guide Questions</h3>
+                <div class="guide-grid">
+                    <div class="guide-item">
+                        <h4>1. Information Systems</h4>
+                        <p>Create a visual infographic showing data → information → knowledge transformation with daily life example.</p>
+                    </div>
+                    <div class="guide-item">
+                        <h4>2. Computer Science Areas</h4>
+                        <p>Design a mind map showing AI, Cybersecurity, Data Science with concepts, careers, and innovations.</p>
+                    </div>
+                    <div class="guide-item">
+                        <h4>3. Computer Systems Uses</h4>
+                        <p>Create storyboard showing computer systems in healthcare/finance industry throughout a workday.</p>
+                    </div>
+                    <div class="guide-item">
+                        <h4>4. Algorithm & Flowchart</h4>
+                        <p>Develop flowchart for real-life scenario (meal prep/trip planning) with pseudocode.</p>
+                    </div>
+                    <div class="guide-item">
+                        <h4>5. Number Systems</h4>
+                        <p>Create poster explaining decimal-binary-hexadecimal conversion with real-life examples.</p>
+                    </div>
+                    <div class="guide-item">
+                        <h4>6. Software Concepts</h4>
+                        <p>Design brochure comparing general-purpose vs specific-purpose software with examples.</p>
+                    </div>
+                    <div class="guide-item">
+                        <h4>7. Hardware Concepts</h4>
+                        <p>Build 3D model/drawing of computer system highlighting IPOS components.</p>
+                    </div>
+                    <div class="guide-item">
+                        <h4>8. Utility Software</h4>
+                        <p>Create "User's Guide" for antivirus, backup, productivity apps with troubleshooting FAQ.</p>
+                    </div>
+                    <div class="guide-item">
+                        <h4>9. Database Concepts</h4>
+                        <p>Design illustrated database schema for library with tables and usage narrative.</p>
+                    </div>
+                    <div class="guide-item">
+                        <h4>10. Computer Networks</h4>
+                        <p>Create network diagram of small business showing topology and network tools.</p>
+                    </div>
+                    <div class="guide-item">
+                        <h4>11. IT Ethics</h4>
+                        <p>Develop comic strip illustrating ethical dilemma (data privacy vs public safety).</p>
+                    </div>
+                    <div class="guide-item">
+                        <h4>12. HTML Programming</h4>
+                        <p>Design mini website prototype for community event with headings, images, links.</p>
+                    </div>
+                    <div class="guide-item">
+                        <h4>13. CSS Programming</h4>
+                        <p>Build style guide for fictional company website with CSS styles and mockup.</p>
+                    </div>
+                    <div class="guide-item">
+                        <h4>14. Future of Computing</h4>
+                        <p>Write sci-fi story set in future with Generative AI and data analytics in daily life.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="portfolio-section" id="portfolio">
+            <div class="section-content">
+                <h2 class="section-title">Computer Science Concepts</h2>
+                <div class="portfolio-grid">
+
+                    <!-- 1. Info Systems -->
+                    <div class="portfolio-item">
+                        <h3>1. Information Systems: Data to Knowledge</h3>
+                        <div class="infographic-container">
+                            <div class="info-step"><i class="fa-solid fa-database"></i>
+                                <h4>Data</h4>
+                                <p>Raw facts (e.g., 25°C, 80% humidity)</p>
+                            </div>
+                            <div class="arrow"><i class="fa-solid fa-arrow-right"></i></div>
+                            <div class="info-step"><i class="fa-solid fa-chart-line"></i>
+                                <h4>Information</h4>
+                                <p>Processed data (e.g., "It is warm and humid today")</p>
+                            </div>
+                            <div class="arrow"><i class="fa-solid fa-arrow-right"></i></div>
+                            <div class="info-step"><i class="fa-solid fa-lightbulb"></i>
+                                <h4>Knowledge</h4>
+                                <p>Actionable insight (e.g., "Wear light clothes, expect rain")</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2. CS Areas -->
+                    <div class="portfolio-item">
+                        <h3>2. Areas of Computer Science</h3>
+                        <div class="mindmap-container">
+                            <div class="mindmap-center">Computer Science</div>
+                            <div class="mindmap-branch">
+                                <h4>Artificial Intelligence</h4>
+                                <p>Machine Learning, Robotics. <br><strong>Impact:</strong> Automation & Smart
+                                    Assistants.</p>
+                            </div>
+                            <div class="mindmap-branch">
+                                <h4>Cybersecurity</h4>
+                                <p>Encryption, Network Defense. <br><strong>Impact:</strong> Protecting Data Privacy.
+                                </p>
+                            </div>
+                            <div class="mindmap-branch">
+                                <h4>Data Science</h4>
+                                <p>Big Data, Analytics. <br><strong>Impact:</strong> Informed Decision Making.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 3. Storyboard -->
+                    <div class="portfolio-item">
+                        <h3>3. Computer Systems in Healthcare</h3>
+                        <div class="storyboard-container">
+                            <div class="story-panel">
+                                <h4>8:00 AM: Check-in</h4>
+                                <p>Receptionist uses <strong>Patient Management System</strong> to log arrival.</p>
+                            </div>
+                            <div class="story-panel">
+                                <h4>9:00 AM: Diagnosis</h4>
+                                <p>Doctor uses <strong>MRI Scanner</strong> (Embedded System) for imaging.</p>
+                            </div>
+                            <div class="story-panel">
+                                <h4>10:00 AM: Prescription</h4>
+                                <p><strong>E-Prescribing Software</strong> sends order to pharmacy instantly.</p>
+                            </div>
+                            <div class="story-panel">
+                                <h4>11:00 AM: Billing</h4>
+                                <p><strong>Finance System</strong> processes insurance claim automatically.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 4. Algorithm -->
+                    <div class="portfolio-item">
+                        <h3>4. Algorithm: Making Coffee</h3>
+                        <div class="flowchart-container">
+                            <div class="flow-step">Start</div>
+                            <div class="flow-arrow">↓</div>
+                            <div class="flow-step">Boil Water</div>
+                            <div class="flow-arrow">↓</div>
+                            <div class="flow-step">Add Coffee to Cup</div>
+                            <div class="flow-arrow">↓</div>
+                            <div class="flow-step">Pour Water</div>
+                            <div class="flow-arrow">↓</div>
+                            <div class="flow-step">End</div>
+                        </div>
+                        <div class="portfolio-content">
+                            <h4>Pseudocode</h4>
+                            <pre
+                                style="background:#222; padding:1rem; border-radius:5px; overflow-x:auto; margin-top:1rem; color:white;">
+BEGIN
+  Boil water
+  Get cup
+  Add coffee powder to cup
+  IF user wants sugar THEN
+    Add sugar
+  ENDIF
+  Pour boiling water
+  Stir
+END</pre>
+                            <p style="margin-top:1rem;"><em>Automation: A smart coffee maker automates this by
+                                    controlling water temperature and dispensing exact amounts.</em></p>
+                        </div>
+                    </div>
+
+                    <!-- 5. Number Systems -->
+                    <div class="portfolio-item">
+                        <h3>5. Number Systems Conversion</h3>
+                        <div class="poster-container">
+                            <table>
+                                <tr>
+                                    <th>Decimal</th>
+                                    <th>Binary (Base 2)</th>
+                                    <th>Hexadecimal (Base 16)</th>
+                                </tr>
+                                <tr>
+                                    <td>10</td>
+                                    <td>1010</td>
+                                    <td>A</td>
+                                </tr>
+                                <tr>
+                                    <td>255</td>
+                                    <td>11111111</td>
+                                    <td>FF</td>
+                                </tr>
+                            </table>
+                            <p style="margin-top:1rem;"><strong>Real Life Example:</strong> Binary '1' represents an ON
+                                switch, '0' represents OFF in a circuit.</p>
+                        </div>
+                    </div>
+
+                    <!-- 6. Software Concepts -->
+                    <div class="portfolio-item">
+                        <h3>6. Software Concepts: General vs Specific</h3>
+                        <div class="brochure-layout">
+                            <div class="brochure-side" style="border-top: 5px solid #3498db; padding: 1rem;">
+                                <h4>General Purpose</h4>
+                                <p>Software designed for a wide range of tasks.</p>
+                                <ul>
+                                    <li><strong>Examples:</strong> MS Word, Excel, Web Browsers</li>
+                                    <li><strong>Features:</strong> Versatile, user-friendly, widely available.</li>
+                                </ul>
+                                <p><em>"I use Word for everything from letters to reports!" - User A</em></p>
+                            </div>
+                            <div class="brochure-side" style="border-top: 5px solid #2c3e50; padding: 1rem;">
+                                <h4>Specific Purpose</h4>
+                                <p>Software designed for a specific task or industry.</p>
+                                <ul>
+                                    <li><strong>Examples:</strong> AutoCAD, Hotel Management System</li>
+                                    <li><strong>Features:</strong> Specialized tools, efficient for niche tasks.</li>
+                                </ul>
+                                <p><em>"AutoCAD is essential for my engineering designs." - User B</em></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 7. Hardware (IPOS) -->
+                    <div class="portfolio-item">
+                        <h3>7. Hardware: IPOS Model</h3>
+                        <div class="model-3d-view">
+                            <div class="cube"><span>CPU</span></div>
+                            <div style="position:absolute; top:10px; left:10px; color:white; text-align:left;">
+                                <p><strong>Input:</strong> Keyboard, Mouse</p>
+                                <p><strong>Process:</strong> CPU (Central Processing Unit)</p>
+                                <p><strong>Output:</strong> Monitor, Printer</p>
+                                <p><strong>Storage:</strong> HDD, SSD</p>
+                            </div>
+                        </div>
+                        <p style="margin-top:1rem;">The CPU (Process) receives data from Input devices, processes it
+                            using instructions in Memory, and sends results to Output devices or Storage.</p>
+                    </div>
+
+                    <!-- 8. Utilities -->
+                    <div class="portfolio-item">
+                        <h3>8. Utility Software Guide</h3>
+                        <div class="guide-booklet">
+                            <h4><i class="fa-solid fa-shield-halved"></i> Antivirus</h4>
+                            <p><strong>Use:</strong> Scans for and removes malware.</p>
+                            <p><strong>Benefit:</strong> Protects data integrity.</p>
+                            <hr style="margin:1rem 0; border-color:#ccc;">
+                            <h4><i class="fa-solid fa-box-archive"></i> Backup Software</h4>
+                            <p><strong>Use:</strong> Creates copies of data.</p>
+                            <p><strong>Benefit:</strong> Prevents data loss during crashes.</p>
+                            <hr style="margin:1rem 0; border-color:#ccc;">
+                            <h4><i class="fa-solid fa-wrench"></i> Troubleshooting FAQ</h4>
+                            <p><strong>Q:</strong> Computer is slow?</p>
+                            <p><strong>A:</strong> Run disk cleanup and defragmentation.</p>
+                        </div>
+                    </div>
+
+                    <!-- 9. Database Schema -->
+                    <div class="portfolio-item">
+                        <h3>9. Library Database Schema</h3>
+                        <div class="db-schema">
+                            <div class="db-table">
+                                <div class="db-header">Books</div>
+                                <div class="db-row">PK: BookID</div>
+                                <div class="db-row">Title</div>
+                                <div class="db-row">AuthorID (FK)</div>
+                                <div class="db-row">Genre</div>
+                            </div>
+                            <div class="db-table">
+                                <div class="db-header">Authors</div>
+                                <div class="db-row">PK: AuthorID</div>
+                                <div class="db-row">Name</div>
+                                <div class="db-row">Nationality</div>
+                            </div>
+                            <div class="db-table">
+                                <div class="db-header">Members</div>
+                                <div class="db-row">PK: MemberID</div>
+                                <div class="db-row">Name</div>
+                                <div class="db-row">JoinDate</div>
+                            </div>
+                        </div>
+                        <p style="margin-top:1rem;"><strong>Narrative:</strong> When a member borrows a book, the
+                            librarian checks the <em>Books</em> table for availability and links it to the
+                            <em>Members</em> table via a transaction record.
+                        </p>
+                    </div>
+
+                    <!-- 10. Networks -->
+                    <div class="portfolio-item">
+                        <h3>10. Network Topology (Star)</h3>
+                        <div class="network-diagram">
+                            <div class="net-node center-node"><i class="fa-solid fa-server"></i></div>
+                            <div class="net-node node-1"><i class="fa-solid fa-desktop"></i></div>
+                            <div class="net-node node-2"><i class="fa-solid fa-laptop"></i></div>
+                            <div class="net-node node-3"><i class="fa-solid fa-print"></i></div>
+                        </div>
+                        <p style="margin-top:1rem;"><strong>Scenario:</strong> In this Star Topology, all devices
+                            connect to a central switch/server. If one cable fails, only that device is affected,
+                            ensuring business continuity.</p>
+                    </div>
+
+                    <!-- 11. Security & Ethics -->
+                    <div class="portfolio-item">
+                        <h3>11. IT Ethics: Data Privacy vs Safety</h3>
+                        <div class="comic-strip">
+                            <div class="comic-panel">
+                                <p><strong>Panel 1</strong></p>
+                                <p><strong>Boss:</strong> "We need to unlock this suspect's phone to find the bomb!"</p>
+                            </div>
+                            <div class="comic-panel">
+                                <p><strong>Panel 2</strong></p>
+                                <p><strong>IT Pro:</strong> "But that violates our encryption standards and user privacy
+                                    rights."</p>
+                            </div>
+                            <div class="comic-panel">
+                                <p><strong>Panel 3</strong></p>
+                                <p><strong>IT Pro (Thinking):</strong> *Consults Code of Ethics: Public safety is
+                                    paramount, but so is privacy...*</p>
+                            </div>
+                            <div class="comic-panel">
+                                <p><strong>Panel 4</strong></p>
+                                <p><strong>Resolution:</strong> "I will help with a warrant, but we cannot build a
+                                    backdoor for everyone."</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 12. HTML Programming - TUTORIAL -->
+                    <div class="portfolio-item">
+                        <h3>12. HTML Programming Tutorial</h3>
+                        <div class="tutorial-container">
+                            <div class="tutorial-header">
+                                <h4>HTML Tutorial: Building a Community Event Website</h4>
+                                <span class="difficulty">Beginner Level</span>
+                            </div>
+                            
+                            <div class="tutorial-step">
+                                <h4>Step 1: Basic HTML Structure</h4>
+                                <p>Every HTML document starts with this basic structure:</p>
+                                <div class="code-example">
+<code>&lt;!DOCTYPE html&gt;<br>
+&lt;html lang="en"&gt;<br>
+&lt;head&gt;<br>
+&nbsp;&nbsp;&lt;meta charset="UTF-8"&gt;<br>
+&nbsp;&nbsp;&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;<br>
+&nbsp;&nbsp;&lt;title&gt;<span class="code-value">Green Earth Fair</span>&lt;/title&gt;<br>
+&lt;/head&gt;<br>
+&lt;body&gt;<br>
+&nbsp;&nbsp;<span class="code-comment">&lt;!-- Your content goes here --&gt;</span><br>
+&lt;/body&gt;<br>
+&lt;/html&gt;</code>
+                                </div>
+                            </div>
+                            
+                            <div class="code-tabs">
+                                <button class="code-tab active" onclick="showTab('html-tab')">HTML Code</button>
+                                <button class="code-tab" onclick="showTab('preview-tab')">Live Preview</button>
+                            </div>
+                            
+                            <div id="html-tab" class="code-panel active">
+                                <h5>Complete HTML Code for Event Website:</h5>
+                                <div class="code-example">
+<code>&lt;!DOCTYPE html&gt;<br>
+&lt;html lang="en"&gt;<br>
+&lt;head&gt;<br>
+&nbsp;&nbsp;&lt;meta charset="UTF-8"&gt;<br>
+&nbsp;&nbsp;&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;<br>
+&nbsp;&nbsp;&lt;title&gt;<span class="code-value">Green Earth Fair</span>&lt;/title&gt;<br>
+&nbsp;&nbsp;&lt;style&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;body { font-family: Arial, sans-serif; margin: 0; padding: 0; }<br>
+&nbsp;&nbsp;&nbsp;&nbsp;header { background: #4CAF50; color: white; padding: 1rem; }<br>
+&nbsp;&nbsp;&nbsp;&nbsp;nav a { color: white; margin: 0 1rem; text-decoration: none; }<br>
+&nbsp;&nbsp;&lt;/style&gt;<br>
+&lt;/head&gt;<br>
+&lt;body&gt;<br>
+<br>
+&nbsp;&nbsp;<span class="code-comment">&lt;!-- Header Section --&gt;</span><br>
+&nbsp;&nbsp;&lt;header&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;h1&gt;<span class="code-value">🌿 Green Earth Fair</span>&lt;/h1&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;nav&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a href="#home"&gt;<span class="code-value">Home</span>&lt;/a&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a href="#about"&gt;<span class="code-value">About</span>&lt;/a&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a href="#events"&gt;<span class="code-value">Events</span>&lt;/a&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a href="#contact"&gt;<span class="code-value">Contact</span>&lt;/a&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/nav&gt;<br>
+&nbsp;&nbsp;&lt;/header&gt;<br>
+<br>
+&nbsp;&nbsp;&lt;main style="padding: 2rem;"&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;section id="home"&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;h2&gt;<span class="code-value">Welcome to Our Community Event</span>&lt;/h2&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;img src="tree-planting.jpg" alt="Tree Planting" width="400"&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;<span class="code-value">Join us for workshops, tree planting, and eco-friendly activities!</span>&lt;/p&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/section&gt;<br>
+&nbsp;&nbsp;&lt;/main&gt;<br>
+<br>
+&nbsp;&nbsp;&lt;footer style="background: #333; color: white; text-align: center; padding: 1rem;"&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;<span class="code-value">© 2024 Green Earth Fair</span>&lt;/p&gt;<br>
+&nbsp;&nbsp;&lt;/footer&gt;<br>
+<br>
+&lt;/body&gt;<br>
+&lt;/html&gt;</code>
+                                </div>
+                            </div>
+                            
+                            <div id="preview-tab" class="code-panel">
+                                <h5>Live Preview:</h5>
+                                <div class="live-preview">
+                                    <header style="background: #4CAF50; color: white; padding: 1rem; text-align: center;">
+                                        <h1 style="margin: 0;">🌿 Green Earth Fair</h1>
+                                        <nav style="margin-top: 1rem;">
+                                            <a href="#home" style="color: white; margin: 0 10px; text-decoration: none;">Home</a>
+                                            <a href="#about" style="color: white; margin: 0 10px; text-decoration: none;">About</a>
+                                            <a href="#events" style="color: white; margin: 0 10px; text-decoration: none;">Events</a>
+                                            <a href="#contact" style="color: white; margin: 0 10px; text-decoration: none;">Contact</a>
+                                        </nav>
+                                    </header>
+                                    <main style="padding: 2rem;">
+                                        <section id="home">
+                                            <h2>Welcome to Our Community Event</h2>
+                                            <div style="background: #e8f5e8; padding: 1rem; border-radius: 5px; margin: 1rem 0;">
+                                                <p>Join us for workshops, tree planting, and eco-friendly activities!</p>
+                                                <p><strong>Date:</strong> October 15, 2024</p>
+                                                <p><strong>Time:</strong> 9:00 AM - 5:00 PM</p>
+                                                <p><strong>Location:</strong> City Park</p>
+                                            </div>
+                                        </section>
+                                        <section id="about" style="margin-top: 2rem;">
+                                            <h2>About Us</h2>
+                                            <p>We are a community group dedicated to environmental conservation since 2010.</p>
+                                            <ul>
+                                                <li>Founded: 2010</li>
+                                                <li>Members: 500+</li>
+                                                <li>Trees Planted: 10,000+</li>
+                                            </ul>
+                                        </section>
+                                    </main>
+                                </div>
+                            </div>
+                            
+                            <div class="tutorial-step">
+                                <h4>HTML Best Practices:</h4>
+                                <ul style="background: rgba(255,255,255,0.1); padding: 1rem; border-radius: 5px;">
+                                    <li>Always use semantic tags (&lt;header&gt;, &lt;nav&gt;, &lt;main&gt;, &lt;footer&gt;)</li>
+                                    <li>Add alt attributes to all images for accessibility</li>
+                                    <li>Use proper indentation for readability</li>
+                                    <li>Validate your HTML using W3C Validator</li>
+                                    <li>Keep your code organized with comments</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 13. CSS Programming - TUTORIAL -->
+                    <div class="portfolio-item">
+                        <h3>13. CSS Programming Tutorial</h3>
+                        <div class="tutorial-container">
+                            <div class="tutorial-header">
+                                <h4>CSS Tutorial: Creating a Complete Style Guide</h4>
+                                <span class="difficulty">Intermediate Level</span>
+                            </div>
+                            
+                            <div class="code-tabs">
+                                <button class="code-tab active" onclick="showCssTab('basics-tab')">CSS Basics</button>
+                                <button class="code-tab" onclick="showCssTab('layout-tab')">Layout & Grid</button>
+                                <button class="code-tab" onclick="showCssTab('responsive-tab')">Responsive Design</button>
+                                <button class="code-tab" onclick="showCssTab('styleguide-tab')">Style Guide</button>
+                            </div>
+                            
+                            <div id="basics-tab" class="code-panel active">
+                                <h4>CSS Syntax Fundamentals</h4>
+                                <div class="tutorial-step">
+                                    <p><strong>Basic CSS Rule Structure:</strong></p>
+                                    <div class="code-example">
+<code><span class="code-comment">/* Selector { Property: Value; } */</span><br>
+<span class="code-tag">selector</span> {<br>
+&nbsp;&nbsp;<span class="code-attr">property</span>: <span class="code-value">value</span>;<br>
+&nbsp;&nbsp;<span class="code-attr">another-property</span>: <span class="code-value">another-value</span>;<br>
+}</code>
+                                    </div>
+                                    
+                                    <p><strong>Common CSS Properties:</strong></p>
+                                    <div class="code-example">
+<code><span class="code-comment">/* Text Styling */</span><br>
+<span class="code-tag">h1</span> {<br>
+&nbsp;&nbsp;<span class="code-attr">color</span>: <span class="code-value">#2c3e50</span>;<br>
+&nbsp;&nbsp;<span class="code-attr">font-family</span>: <span class="code-value">'Arial', sans-serif</span>;<br>
+&nbsp;&nbsp;<span class="code-attr">font-size</span>: <span class="code-value">2.5rem</span>;<br>
+&nbsp;&nbsp;<span class="code-attr">text-align</span>: <span class="code-value">center</span>;<br>
+}<br>
+<br>
+<span class="code-comment">/* Box Model */</span><br>
+<span class="code-tag">.container</span> {<br>
+&nbsp;&nbsp;<span class="code-attr">padding</span>: <span class="code-value">20px</span>;<br>
+&nbsp;&nbsp;<span class="code-attr">margin</span>: <span class="code-value">10px</span>;<br>
+&nbsp;&nbsp;<span class="code-attr">border</span>: <span class="code-value">2px solid #3498db</span>;<br>
+&nbsp;&nbsp;<span class="code-attr">border-radius</span>: <span class="code-value">8px</span>;<br>
+&nbsp;&nbsp;<span class="code-attr">background-color</span>: <span class="code-value">#f8f9fa</span>;<br>
+}</code>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div id="layout-tab" class="code-panel">
+                                <h4>CSS Layout Techniques</h4>
+                                <div class="tutorial-step">
+                                    <p><strong>Flexbox Layout:</strong></p>
+                                    <div class="code-example">
+<code><span class="code-tag">.flex-container</span> {<br>
+&nbsp;&nbsp;<span class="code-attr">display</span>: <span class="code-value">flex</span>;<br>
+&nbsp;&nbsp;<span class="code-attr">justify-content</span>: <span class="code-value">space-between</span>;<br>
+&nbsp;&nbsp;<span class="code-attr">align-items</span>: <span class="code-value">center</span>;<br>
+&nbsp;&nbsp;<span class="code-attr">gap</span>: <span class="code-value">20px</span>;<br>
+&nbsp;&nbsp;<span class="code-attr">flex-wrap</span>: <span class="code-value">wrap</span>;<br>
+}<br>
+<br>
+<span class="code-tag">.flex-item</span> {<br>
+&nbsp;&nbsp;<span class="code-attr">flex</span>: <span class="code-value">1 1 300px</span>; <span class="code-comment">/* grow | shrink | basis */</span><br>
+}</code>
+                                    </div>
+                                    
+                                    <p><strong>CSS Grid Layout:</strong></p>
+                                    <div class="code-example">
+<code><span class="code-tag">.grid-container</span> {<br>
+&nbsp;&nbsp;<span class="code-attr">display</span>: <span class="code-value">grid</span>;<br>
+&nbsp;&nbsp;<span class="code-attr">grid-template-columns</span>: <span class="code-value">repeat(3, 1fr)</span>;<br>
+&nbsp;&nbsp;<span class="code-attr">grid-gap</span>: <span class="code-value">20px</span>;<br>
+}<br>
+<br>
+<span class="code-comment">/* Responsive Grid */</span><br>
+<span class="code-tag">@media</span> (<span class="code-attr">max-width</span>: <span class="code-value">768px</span>) {<br>
+&nbsp;&nbsp;<span class="code-tag">.grid-container</span> {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-attr">grid-template-columns</span>: <span class="code-value">repeat(2, 1fr)</span>;<br>
+&nbsp;&nbsp;}<br>
+}</code>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div id="responsive-tab" class="code-panel">
+                                <h4>Responsive Design with Media Queries</h4>
+                                <div class="tutorial-step">
+                                    <div class="code-example">
+<code><span class="code-comment">/* Mobile First Approach */</span><br>
+<span class="code-tag">.container</span> {<br>
+&nbsp;&nbsp;<span class="code-attr">padding</span>: <span class="code-value">15px</span>;<br>
+&nbsp;&nbsp;<span class="code-attr">margin</span>: <span class="code-value">10px</span>;<br>
+}<br>
+<br>
+<span class="code-comment">/* Tablet */</span><br>
+<span class="code-tag">@media</span> (<span class="code-attr">min-width</span>: <span class="code-value">768px</span>) {<br>
+&nbsp;&nbsp;<span class="code-tag">.container</span> {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-attr">padding</span>: <span class="code-value">30px</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-attr">margin</span>: <span class="code-value">20px</span>;<br>
+&nbsp;&nbsp;}<br>
+}<br>
+<br>
+<span class="code-comment">/* Desktop */</span><br>
+<span class="code-tag">@media</span> (<span class="code-attr">min-width</span>: <span class="code-value">1024px</span>) {<br>
+&nbsp;&nbsp;<span class="code-tag">.container</span> {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-attr">max-width</span>: <span class="code-value">1200px</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-attr">margin</span>: <span class="code-value">0 auto</span>;<br>
+&nbsp;&nbsp;}<br>
+}</code>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div id="styleguide-tab" class="code-panel">
+                                <h4>Complete Style Guide Example</h4>
+                                <div class="tutorial-step">
+                                    <p><strong>Complete CSS Style Guide for "TechCorp":</strong></p>
+                                    <div class="code-example">
+<code><span class="code-comment">/* ===== TECH CORP STYLE GUIDE ===== */</span><br>
+<span class="code-comment">/* Color Palette */</span><br>
+<span class="code-tag">:root</span> {<br>
+&nbsp;&nbsp;<span class="code-comment">--primary-color</span>: <span class="code-value">#3498db</span>;<br>
+&nbsp;&nbsp;<span class="code-comment">--secondary-color</span>: <span class="code-value">#2c3e50</span>;<br>
+&nbsp;&nbsp;<span class="code-comment">--accent-color</span>: <span class="code-value">#e74c3c</span>;<br>
+&nbsp;&nbsp;<span class="code-comment">--background-color</span>: <span class="code-value">#ecf0f1</span>;<br>
+&nbsp;&nbsp;<span class="code-comment">--text-color</span>: <span class="code-value">#333333</span>;<br>
+}<br>
+<br>
+<span class="code-comment">/* Typography */</span><br>
+<span class="code-tag">body</span> {<br>
+&nbsp;&nbsp;<span class="code-attr">font-family</span>: <span class="code-value">'Segoe UI', Tahoma, Geneva, Verdana, sans-serif</span>;<br>
+&nbsp;&nbsp;<span class="code-attr">line-height</span>: <span class="code-value">1.6</span>;<br>
+&nbsp;&nbsp;<span class="code-attr">color</span>: <span class="code-value">var(--text-color)</span>;<br>
+}<br>
+<br>
+<span class="code-comment">/* Buttons */</span><br>
+<span class="code-tag">.btn-primary</span> {<br>
+&nbsp;&nbsp;<span class="code-attr">background-color</span>: <span class="code-value">var(--primary-color)</span>;<br>
+&nbsp;&nbsp;<span class="code-attr">color</span>: <span class="code-value">white</span>;<br>
+&nbsp;&nbsp;<span class="code-attr">padding</span>: <span class="code-value">12px 24px</span>;<br>
+&nbsp;&nbsp;<span class="code-attr">border</span>: <span class="code-value">none</span>;<br>
+&nbsp;&nbsp;<span class="code-attr">border-radius</span>: <span class="code-value">4px</span>;<br>
+&nbsp;&nbsp;<span class="code-attr">cursor</span>: <span class="code-value">pointer</span>;<br>
+&nbsp;&nbsp;<span class="code-attr">transition</span>: <span class="code-value">background-color 0.3s</span>;<br>
+}<br>
+<br>
+<span class="code-tag">.btn-primary:hover</span> {<br>
+&nbsp;&nbsp;<span class="code-attr">background-color</span>: <span class="code-value">#2980b9</span>;<br>
+}</code>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="tutorial-step">
+                                <h4>CSS Best Practices:</h4>
+                                <ul style="background: rgba(255,255,255,0.1); padding: 1rem; border-radius: 5px;">
+                                    <li>Use CSS variables for consistent theming</li>
+                                    <li>Follow mobile-first responsive design</li>
+                                    <li>Use Flexbox/Grid for modern layouts</li>
+                                    <li>Organize CSS with comments and sections</li>
+                                    <li>Minimize specificity for maintainability</li>
+                                    <li>Implement CSS resets/normalization</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 14. Future of Computing -->
+                    <div class="portfolio-item">
+                        <h3>14. Future of Computing: The AI Assistant</h3>
+                        <div class="story-container">
+                            <p><strong>Year 2045.</strong></p>
+                            <p>Elara woke up to the soft hum of her home AI, "Aura."</p>
+                            <p>"Good morning, Elara. Based on your sleep patterns and today's schedule, I've prepared a
+                                nutrient blend optimized for focus," Aura's voice was indistinguishable from a human's.
+                            </p>
+                            <p>Elara sipped the drink. "Thanks, Aura. What's the news?"</p>
+                            <p>"Global energy optimization is at 99%. However, there is a debate on the Ethics Council
+                                about the new 'Predictive Justice' algorithm. It wants to detain individuals before
+                                crimes occur based on behavioral analytics."</p>
+                            <p>Elara frowned. "That's the problem with you AIs. You see data, not people. We can't
+                                punish people for crimes they haven't committed."</p>
+                            <p>"I am merely reporting the analytics, Elara. But I understand your hesitation. That is
+                                why humans still make the final call... for now."</p>
+                        </div>
+                    </div>
+                </div>
+
+                <section class="contact-section" id="contact">
+                    <div class="section-content">
+                        <h2 class="section-title">Contact Me</h2>
+                        <div class="contact-container">
+                            <div class="contact-info">
+                                <h3>Get In Touch</h3>
+                                <p class="contact-desc">I'm currently available for freelance work or just a friendly
+                                    chat about technology!</p>
+                                <div class="contact-item">
+                                    <i class="fa-solid fa-envelope"></i>
+                                    <div>
+                                        <h4>Email</h4>
+                                        <p>25104531@usc.edu.ph</p>
+                                    </div>
+                                </div>
+                                <div class="contact-item">
+                                    <i class="fa-solid fa-phone"></i>
+                                    <div>
+                                        <h4>Phone</h4>
+                                        <p>+639266659001</p>
+                                    </div>
+                                </div>
+                                <div class="contact-item">
+                                    <i class="fa-solid fa-location-dot"></i>
+                                    <div>
+                                        <h4>Location</h4>
+                                        <p>Cebu City, Philippines</p>
+                                    </div>
+                                </div>
+                                <div class="social-link-list">
+                                    <a href="https://www.facebook.com/hansoe.binny" class="social-link" target="_blank">
+                                        <i class="fa-brands fa-facebook"></i>
+                                    </a>
+                                    <a href="https://www.instagram.com/clefordbalili" class="social-link" target="_blank">
+                                        <i class="fa-brands fa-instagram"></i>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <form class="contact-form">
+                                <h3>Send a Message</h3>
+                                <div class="form-group">
+                                    <input type="text" placeholder="Your Name" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" placeholder="Your Email" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" placeholder="Subject" required>
+                                </div>
+                                <div class="form-group">
+                                    <textarea placeholder="Your Message" rows="5" required></textarea>
+                                </div>
+                                <button type="submit" class="button order-now">Send Message</button>
+                            </form>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="section-content">
+            <p>&copy; 2025 Cleford Cajilo, Balili. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Tab switching for HTML tutorial
+        function showTab(tabId) {
+            // Hide all tabs
+            document.querySelectorAll('.code-panel').forEach(panel => {
+                panel.classList.remove('active');
+            });
+            
+            // Remove active class from all buttons
+            document.querySelectorAll('.code-tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            
+            // Show selected tab
+            document.getElementById(tabId).classList.add('active');
+            
+            // Activate selected button
+            event.target.classList.add('active');
+        }
+        
+        // Tab switching for CSS tutorial
+        function showCssTab(tabId) {
+            // Hide all CSS tabs
+            document.querySelectorAll('#layout-tab, #responsive-tab, #styleguide-tab, #basics-tab').forEach(panel => {
+                panel.classList.remove('active');
+            });
+            
+            // Remove active class from all CSS buttons
+            document.querySelectorAll('.code-tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            
+            // Show selected tab
+            document.getElementById(tabId).classList.add('active');
+            
+            // Activate selected button
+            event.target.classList.add('active');
+        }
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Form submission handling
+        document.querySelector('.contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message! I will get back to you soon.');
+            this.reset();
+        });
+    </script>
+
+</body>
+
+</html>
