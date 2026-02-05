@@ -1,0 +1,17 @@
+Reflective AI Log
+
+Initial prompt (to brainstorm a professional summary):
+"I am a first-year IT student studying Computer Information Systems. I want a short professional summary (2-3 sentences) that highlights web development skills, technologies like HTML/CSS/JavaScript, and a collaborative learning mindset. Keep tone professional and concise."
+
+Follow-up prompt (refinement):
+"Shorten to two sentences, include 'responsive' and 'user experience', and keep it suitable for a portfolio hero section."
+
+Notes on AI output and edits:
+- The AI returned a 3-sentence paragraph; I asked for a 2-sentence version and it was revised accordingly.
+- I removed any suggestions that used layout tables or inline styles; I kept only semantic HTML sections (<header>, <section>, <article>, <figure>, <footer>). 
+- I ensured external links open in a new tab using target="_blank".
+- Image is placed in the images subfolder and linked relatively as images/profile.svg.
+
+Technical justification:
+- Using semantic tags improves accessibility and document structure for screen readers and search engines.
+- Keeping the page unstyled (no <style> tags or style attributes) meets the assignment constraint; styling can be added later in a separate CSS file.
